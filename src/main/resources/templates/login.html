@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>ログイン画面</title>
+</head>
+
+<body>
+	<h2>ログイン画面</h2>
+
+	<p th:text="*{errorMsg}" style="color: red;"></p>
+	<p th:text="*{cmnMsg}" style="color: blue;"></p>
+	<form th:action="@{/login}" method="post" th:object="${loginForm}">
+		<div>
+			<label>ログインID</label>
+			<input type="text" th:field="*{loginId}">
+		</div>
+		<div>
+			<label>パスワード</label>
+			<input type="password" th:field="*{password}">
+		</div>
+		<div>
+			<input type="submit" value="ログイン">
+		</div>
+	</form>
+	<div>
+		<a th:href="@{/register}">会員登録はこちら</a>
+	</div>
+
+</body>
+
+</html>
